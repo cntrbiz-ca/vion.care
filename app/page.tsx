@@ -155,7 +155,7 @@ export default function Home() {
               className={styles.btnWhite}
               onClick={() => {
                 if (typeof window !== 'undefined' && (window as any).ym) {
-                  (window as any).ym(Number(process.env.NEXT_PUBLIC_YM_ID), 'reachGoal', 'quiz_start')
+                  (window as any).ym(108576039, 'reachGoal', 'quiz_start')
                 }
               }}
             >
