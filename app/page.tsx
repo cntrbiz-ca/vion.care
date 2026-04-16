@@ -148,12 +148,25 @@ export default function Home() {
             AI обработает ваш профиль и даст точный персональный план.
           </p>
           <div className={styles.quizActions}>
-            <a href="https://t.me/vioncarebot" target="_blank" rel="noopener noreferrer" className={styles.btnWhite}>
+            <a
+              href="https://t.me/vion_care_bot"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.btnWhite}
+              onClick={() => {
+                if (typeof window !== 'undefined' && (window as any).ym) {
+                  (window as any).ym(Number(process.env.NEXT_PUBLIC_YM_ID), 'reachGoal', 'quiz_start')
+                }
+              }}
+            >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.281c-.144.658-.537.817-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.604.295l.213-3.053 5.56-5.023c.24-.213-.054-.333-.374-.12L8.32 14.617l-2.96-.924c-.643-.204-.656-.643.136-.953l11.57-4.461c.538-.194 1.006.131.828.942z"/>
               </svg>
-              Начать в Telegram
+              Получить персональный план — бесплатно
             </a>
+            <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)', marginTop: '0.5rem' }}>
+              За 3 минуты · Без регистрации · На основе квиза
+            </p>
             <a href="https://instagram.com/vion.care" target="_blank" rel="noopener noreferrer" className={styles.quizLink}>
               Instagram @vion.care →
             </a>
